@@ -1,5 +1,0 @@
-org/hazelcast/cloudfoundry/servicebroker/Exception/HazelcastServiceException.class
-org/hazelcast/cloudfoundry/servicebroker/service/HazelcastServiceInstanceBindingService.class
-org/hazelcast/cloudfoundry/servicebroker/service/HazelcastServiceInstanceService.class
-org/hazelcast/cloudfoundry/servicebroker/service/HazelcastCatalogService.class
-org/hazelcast/cloudfoundry/servicebroker/Application.class
