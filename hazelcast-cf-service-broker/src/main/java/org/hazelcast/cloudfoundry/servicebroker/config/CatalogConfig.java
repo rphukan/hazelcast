@@ -21,8 +21,8 @@ public class CatalogConfig {
     public Catalog catalog() {
         return new Catalog( Arrays.asList(
                 new ServiceDefinition(
-                        "Hazelcast2",
-                        "Hazelcast2",
+                        "Hazelcast",
+                        "Hazelcast",
                         "A simple Hazelcast implementation",
                         true,
                         false,
@@ -41,7 +41,7 @@ public class CatalogConfig {
 
     private Map<String,Object> getServiceDefinitionMetadata() {
         Map<String,Object> sdMetadata = new HashMap<String,Object>();
-        sdMetadata.put("displayName", "Hazelcast2");
+        sdMetadata.put("displayName", "Hazelcast");
         sdMetadata.put("longDescription","Hazelcast Service");
         sdMetadata.put("providerDisplayName","Pivotal");
         sdMetadata.put("documentationUrl","http://www.hazelcast.org");

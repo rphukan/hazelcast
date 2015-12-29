@@ -21,9 +21,7 @@ public class HazelcastServiceInstanceBindingService implements ServiceInstanceBi
 
     private HazelcastServiceRepository repository;
 
-    //@Autowired
     public HazelcastServiceInstanceBindingService() {
-        //repository = new HazelcastServiceBindingRepository();
         repository = HazelcastServiceRepository.getInstance();
     }
 

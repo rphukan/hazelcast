@@ -7,3 +7,4 @@
 ./hazelcast-cf-service-broker/settings.gradle
 ./hazelcast-cf-service-broker/target
 ./hazelcast-cloudfoundry.iml
+./hazelcast-cf-service-broker/.idea

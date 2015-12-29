@@ -14,7 +14,7 @@ import org.cloudfoundry.community.servicebroker.model.DeleteServiceInstanceReque
 import org.cloudfoundry.community.servicebroker.model.ServiceInstance;
 import org.cloudfoundry.community.servicebroker.model.UpdateServiceInstanceRequest;
 import org.cloudfoundry.community.servicebroker.service.ServiceInstanceService;
-import org.hazelcast.cloudfoundry.servicebroker.Exception.HazelcastServiceException;
+import org.hazelcast.cloudfoundry.servicebroker.exception.HazelcastServiceException;
 import org.hazelcast.cloudfoundry.servicebroker.repository.HazelcastServiceRepository;
 import org.springframework.stereotype.Service;
 
@@ -29,9 +29,7 @@ public class HazelcastServiceInstanceService implements ServiceInstanceService {
 
     private HazelcastServiceRepository repository;
 
-    //@Autowired
     public HazelcastServiceInstanceService() {
-        //repository = new HazelcastServiceInstanceRepository();
         repository = HazelcastServiceRepository.getInstance();
     }
 
@@ -66,7 +64,6 @@ public class HazelcastServiceInstanceService implements ServiceInstanceService {
         int hazelcastPort = hazelcastInstance.getCluster().getLocalMember().getAddress().getPort();
         ((HazelcastServiceInstance) serviceInstance).setHazelcastPort(hazelcastPort);
 
-        //TODO: remove InetAddress from credentials if not required
         try {
             InetAddress hazelcastInetAddress = hazelcastInstance.getCluster().getLocalMember().getAddress().getInetAddress();
             ((HazelcastServiceInstance) serviceInstance).setHazelcastInetAddress(hazelcastInetAddress);

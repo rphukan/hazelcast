@@ -1,4 +1,4 @@
-package org.hazelcast.cloudfoundry.servicebroker.Exception;
+package org.hazelcast.cloudfoundry.servicebroker.exception;
 
 import org.cloudfoundry.community.servicebroker.exception.ServiceBrokerException;
 
