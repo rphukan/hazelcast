@@ -15,7 +15,7 @@ import java.util.Map;
  * Created by rahul on 22/12/15.
  */
 @Configuration
-public class CatalogConfig {
+public class HazelcastCatalogConfig {
 
     @Bean
     public Catalog catalog() {

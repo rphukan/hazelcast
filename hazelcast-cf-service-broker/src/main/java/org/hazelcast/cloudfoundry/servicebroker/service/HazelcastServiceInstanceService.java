@@ -1,9 +1,5 @@
 package org.hazelcast.cloudfoundry.servicebroker.service;
 
-import com.hazelcast.config.Config;
-import com.hazelcast.config.JoinConfig;
-import com.hazelcast.config.NetworkConfig;
-import com.hazelcast.core.Hazelcast;
 import com.hazelcast.core.HazelcastInstance;
 import org.cloudfoundry.community.servicebroker.exception.ServiceBrokerException;
 import org.cloudfoundry.community.servicebroker.exception.ServiceInstanceDoesNotExistException;
@@ -16,21 +12,21 @@ import org.cloudfoundry.community.servicebroker.model.UpdateServiceInstanceReque
 import org.cloudfoundry.community.servicebroker.service.ServiceInstanceService;
 import org.hazelcast.cloudfoundry.servicebroker.exception.HazelcastServiceException;
 import org.hazelcast.cloudfoundry.servicebroker.repository.HazelcastServiceRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 
-/**
- * Created by rahul on 21/12/15.
- */
 @Service
 public class HazelcastServiceInstanceService implements ServiceInstanceService {
 
-    private HazelcastServiceRepository repository;
+    private static HazelcastServiceRepository repository = HazelcastServiceRepository.getInstance();
+    private HazelcastAdmin hazelcastAdmin;
 
-    public HazelcastServiceInstanceService() {
-        repository = HazelcastServiceRepository.getInstance();
+    @Autowired
+    public HazelcastServiceInstanceService(HazelcastAdmin hazelcastAdmin) {
+        this.hazelcastAdmin = hazelcastAdmin;
     }
 
     @Override
@@ -45,15 +41,10 @@ public class HazelcastServiceInstanceService implements ServiceInstanceService {
 
         serviceInstance = new HazelcastServiceInstance(createServiceInstanceRequest);
 
-        Config config = new Config();
-        config.setInstanceName(createServiceInstanceRequest.getServiceInstanceId());
-        NetworkConfig network = config.getNetworkConfig();
-        JoinConfig join = network.getJoin();
-        join.getMulticastConfig().setEnabled( false );
-        join.getTcpIpConfig().setEnabled(true);
-        network.getInterfaces().setEnabled( true ).addInterface( "10.*.*.*" );
+        //Config config = getHazelcastInstanceConfig(createServiceInstanceRequest.getServiceInstanceId());
 
-        HazelcastInstance hazelcastInstance = Hazelcast.newHazelcastInstance(config);
+        //HazelcastInstance hazelcastInstance = Hazelcast.newHazelcastInstance(config);
+        HazelcastInstance hazelcastInstance = hazelcastAdmin.createHazelcastInstance(createServiceInstanceRequest.getServiceInstanceId());
         if(hazelcastInstance == null) {
             throw new HazelcastServiceException("Failed to create new Hazelcast member hazelcastInstance: "+createServiceInstanceRequest.getServiceInstanceId());
         }
@@ -82,7 +73,10 @@ public class HazelcastServiceInstanceService implements ServiceInstanceService {
     @Override
     public ServiceInstance deleteServiceInstance(DeleteServiceInstanceRequest deleteServiceInstanceRequest) throws ServiceBrokerException {
         ServiceInstance serviceInstance = repository.findServiceInstance(deleteServiceInstanceRequest.getServiceInstanceId());
-        repository.deleteServiceInstance(serviceInstance);
+        if(serviceInstance != null) {
+            repository.deleteServiceInstance(serviceInstance);
+            hazelcastAdmin.deleteHazelcastInstance(deleteServiceInstanceRequest.getServiceInstanceId());
+        }
         return serviceInstance;
     }
 
@@ -98,4 +92,34 @@ public class HazelcastServiceInstanceService implements ServiceInstanceService {
         repository.saveServiceInstance(updatedServiceInstance);
         return updatedServiceInstance;
     }
+
+//    private String getClusterMembersConfig() {
+//        StringBuilder clusterMembersConfigBuilder = null;
+//
+//        if(repository.getAllServiceInstances().size() > 0) {
+//            clusterMembersConfigBuilder = new StringBuilder();
+//            for (ServiceInstance serviceInstance : repository.getAllServiceInstances()) {
+//                clusterMembersConfigBuilder.append(((HazelcastServiceInstance) serviceInstance).getHazelcastIPAddress());
+//                clusterMembersConfigBuilder.append(",");
+//            }
+//            clusterMembersConfigBuilder.deleteCharAt(clusterMembersConfigBuilder.length() - 1);
+//        }
+//
+//        return clusterMembersConfigBuilder == null ? null : clusterMembersConfigBuilder.toString();
+//    }
+//
+//    private Config getHazelcastInstanceConfig(String serviceInstanceId) {
+//        Config config = new Config();
+//        config.setInstanceName(serviceInstanceId);
+//        NetworkConfig network = config.getNetworkConfig();
+//        JoinConfig join = network.getJoin();
+//        join.getMulticastConfig().setEnabled(false);
+//        join.getTcpIpConfig().setEnabled(true);
+//        String clusterMembers = getClusterMembersConfig();
+//        if(clusterMembers != null)
+//            join.getTcpIpConfig().addMember(clusterMembers);
+//        network.getInterfaces().setEnabled(true).addInterface("10.*.*.*");
+//
+//        return config;
+//    }
 }

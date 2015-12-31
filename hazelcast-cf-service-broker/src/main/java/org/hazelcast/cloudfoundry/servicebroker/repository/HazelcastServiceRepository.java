@@ -3,12 +3,9 @@ package org.hazelcast.cloudfoundry.servicebroker.repository;
 import org.cloudfoundry.community.servicebroker.model.ServiceInstance;
 import org.cloudfoundry.community.servicebroker.model.ServiceInstanceBinding;
 
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
-
-/**
- * Created by rahul on 23/12/15.
- */
 
 public class HazelcastServiceRepository {
 
@@ -34,6 +31,10 @@ public class HazelcastServiceRepository {
         serviceInstanceRepository.put(serviceInstance.getServiceInstanceId(), serviceInstance);
     }
 
+    public boolean exists(ServiceInstance serviceInstance) {
+        return serviceInstanceRepository.containsKey(serviceInstance.getServiceInstanceId());
+    }
+
     public void deleteServiceInstance(ServiceInstance serviceInstance) {
         serviceInstanceRepository.remove(serviceInstance.getServiceInstanceId());
     }
@@ -47,7 +48,12 @@ public class HazelcastServiceRepository {
     }
 
     public void deleteServiceInstanceBinding(ServiceInstanceBinding serviceInstanceBinding) {
-        serviceInstanceBindingRepository.remove(serviceInstanceBinding.getId());
+        if(serviceInstanceBinding != null)
+            serviceInstanceBindingRepository.remove(serviceInstanceBinding.getId());
+    }
+
+    public Collection<ServiceInstance> getAllServiceInstances() {
+        return serviceInstanceRepository.values();
     }
 
 }

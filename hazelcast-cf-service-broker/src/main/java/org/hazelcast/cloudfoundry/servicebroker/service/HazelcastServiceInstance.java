@@ -1,9 +1,7 @@
 package org.hazelcast.cloudfoundry.servicebroker.service;
 
 import org.cloudfoundry.community.servicebroker.model.CreateServiceInstanceRequest;
-import org.cloudfoundry.community.servicebroker.model.DeleteServiceInstanceRequest;
 import org.cloudfoundry.community.servicebroker.model.ServiceInstance;
-import org.cloudfoundry.community.servicebroker.model.UpdateServiceInstanceRequest;
 
 import java.net.InetAddress;
 
@@ -17,14 +15,6 @@ public class HazelcastServiceInstance extends ServiceInstance {
     private int hazelcastPort;
 
     public HazelcastServiceInstance(CreateServiceInstanceRequest request) {
-        super(request);
-    }
-
-    public HazelcastServiceInstance(DeleteServiceInstanceRequest request) {
-        super(request);
-    }
-
-    public HazelcastServiceInstance(UpdateServiceInstanceRequest request) {
         super(request);
     }
 
