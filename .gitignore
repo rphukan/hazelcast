@@ -2,9 +2,9 @@
 gradle/
 gradlew
 gradlew.bat
-./hazelcast-cf-service-broker/.gradle
-./hazelcast-cf-service-broker/build
+./hazelcast-cf-service-broker/.gradle/
+./hazelcast-cf-service-broker/build/
 ./hazelcast-cf-service-broker/settings.gradle
-./hazelcast-cf-service-broker/target
+./hazelcast-cf-service-broker/target/
 ./hazelcast-cloudfoundry.iml
-./hazelcast-cf-service-broker/.idea
+./hazelcast-cf-service-broker/.idea/
