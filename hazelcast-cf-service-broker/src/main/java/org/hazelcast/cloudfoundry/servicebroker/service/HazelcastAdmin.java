@@ -7,7 +7,6 @@ import com.hazelcast.core.Hazelcast;
 import com.hazelcast.core.HazelcastInstance;
 import org.cloudfoundry.community.servicebroker.model.ServiceInstance;
 import org.hazelcast.cloudfoundry.servicebroker.repository.HazelcastServiceRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
@@ -16,12 +15,11 @@ import java.util.Map;
 @Service
 public class HazelcastAdmin {
 
-    private HazelcastServiceRepository repository;
+    private static HazelcastServiceRepository repository = HazelcastServiceRepository.getInstance();
     private Map<String, HazelcastInstance> hazelcastInstances;
 
-    @Autowired
+
     public HazelcastAdmin() {
-        repository = HazelcastServiceRepository.getInstance();
         hazelcastInstances = new HashMap<String, HazelcastInstance>();
     }
 

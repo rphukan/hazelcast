@@ -41,9 +41,6 @@ public class HazelcastServiceInstanceService implements ServiceInstanceService {
 
         serviceInstance = new HazelcastServiceInstance(createServiceInstanceRequest);
 
-        //Config config = getHazelcastInstanceConfig(createServiceInstanceRequest.getServiceInstanceId());
-
-        //HazelcastInstance hazelcastInstance = Hazelcast.newHazelcastInstance(config);
         HazelcastInstance hazelcastInstance = hazelcastAdmin.createHazelcastInstance(createServiceInstanceRequest.getServiceInstanceId());
         if(hazelcastInstance == null) {
             throw new HazelcastServiceException("Failed to create new Hazelcast member hazelcastInstance: "+createServiceInstanceRequest.getServiceInstanceId());
@@ -92,34 +89,4 @@ public class HazelcastServiceInstanceService implements ServiceInstanceService {
         repository.saveServiceInstance(updatedServiceInstance);
         return updatedServiceInstance;
     }
-
-//    private String getClusterMembersConfig() {
-//        StringBuilder clusterMembersConfigBuilder = null;
-//
-//        if(repository.getAllServiceInstances().size() > 0) {
-//            clusterMembersConfigBuilder = new StringBuilder();
-//            for (ServiceInstance serviceInstance : repository.getAllServiceInstances()) {
-//                clusterMembersConfigBuilder.append(((HazelcastServiceInstance) serviceInstance).getHazelcastIPAddress());
-//                clusterMembersConfigBuilder.append(",");
-//            }
-//            clusterMembersConfigBuilder.deleteCharAt(clusterMembersConfigBuilder.length() - 1);
-//        }
-//
-//        return clusterMembersConfigBuilder == null ? null : clusterMembersConfigBuilder.toString();
-//    }
-//
-//    private Config getHazelcastInstanceConfig(String serviceInstanceId) {
-//        Config config = new Config();
-//        config.setInstanceName(serviceInstanceId);
-//        NetworkConfig network = config.getNetworkConfig();
-//        JoinConfig join = network.getJoin();
-//        join.getMulticastConfig().setEnabled(false);
-//        join.getTcpIpConfig().setEnabled(true);
-//        String clusterMembers = getClusterMembersConfig();
-//        if(clusterMembers != null)
-//            join.getTcpIpConfig().addMember(clusterMembers);
-//        network.getInterfaces().setEnabled(true).addInterface("10.*.*.*");
-//
-//        return config;
-//    }
 }

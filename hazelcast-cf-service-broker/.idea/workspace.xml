@@ -33,11 +33,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HazelcastServiceInstanceService.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="HazelcastServiceInstanceService.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/hazelcast/cloudfoundry/servicebroker/service/HazelcastServiceInstanceService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.60796326">
-              <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="91" column="0" selection-start-line="91" selection-start-column="0" selection-end-line="91" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1553#1554#0" expanded="true" />
@@ -87,8 +87,19 @@
             <state vertical-scroll-proportion="0.0">
               <caret line="11" column="36" selection-start-line="11" selection-start-column="36" selection-end-line="11" selection-end-column="36" />
               <folding>
-                <element signature="imports" expanded="false" />
+                <element signature="e#378#379#0" expanded="true" />
+                <element signature="e#423#424#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HazelcastCatalogConfig.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/hazelcast/cloudfoundry/servicebroker/config/HazelcastCatalogConfig.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.13782541">
+              <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -97,12 +108,8 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/org/hazelcast/cloudfoundry/servicebroker/exception/HazelcastServiceException.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-              <folding>
-                <element signature="e#536#537#0" expanded="false" />
-                <marker date="1451398905000" expanded="false" signature="144:184" placeholder="/**...*/" />
-                <marker date="1451398905000" expanded="false" signature="310:321" placeholder=" { " />
-              </folding>
+              <caret line="11" column="5" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -111,7 +118,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/org/hazelcast/cloudfoundry/servicebroker/repository/HazelcastServiceRepository.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+              <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
               <folding>
                 <element signature="e#2138#2139#0" expanded="true" />
                 <element signature="e#2195#2196#0" expanded="true" />
@@ -124,9 +131,11 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/org/hazelcast/cloudfoundry/servicebroker/service/HazelcastAdmin.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="66" column="50" selection-start-line="66" selection-start-column="50" selection-end-line="66" selection-end-column="50" />
+              <caret line="22" column="10" selection-start-line="22" selection-start-column="10" selection-end-line="22" selection-end-column="10" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#749#750#0" expanded="true" />
+                <element signature="e#826#827#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -168,9 +177,10 @@
         <option value="$PROJECT_DIR$/src/main/java/org/hazelcast/cloudfoundry/servicebroker/service/HazelcastServiceInstanceBindingService.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/hazelcast/cloudfoundry/servicebroker/service/HazelcastCatalogService.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/hazelcast/cloudfoundry/servicebroker/service/HazelcastServiceInstance.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/hazelcast/cloudfoundry/servicebroker/service/HazelcastAdmin.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/hazelcast/cloudfoundry/servicebroker/repository/HazelcastServiceRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/hazelcast/cloudfoundry/servicebroker/service/HazelcastAdmin.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/hazelcast/cloudfoundry/servicebroker/service/HazelcastServiceInstanceService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/hazelcast/cloudfoundry/servicebroker/exception/HazelcastServiceException.java" />
       </list>
     </option>
   </component>
@@ -869,7 +879,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="773" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -879,7 +889,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16397415" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" x="529" y="69" width="222" height="681" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2463651" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" x="529" y="69" width="222" height="681" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24959612" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -970,7 +980,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="11" column="36" selection-start-line="11" selection-start-column="36" selection-end-line="11" selection-end-column="36" />
           <folding>
-            <element signature="imports" expanded="false" />
+            <element signature="e#378#379#0" expanded="true" />
+            <element signature="e#423#424#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -979,11 +990,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding>
-            <element signature="e#536#537#0" expanded="false" />
-            <marker date="1451398905000" expanded="false" signature="144:184" placeholder="/**...*/" />
-            <marker date="1451398905000" expanded="false" signature="310:321" placeholder=" { " />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1004,6 +1011,8 @@
           <caret line="5" column="27" selection-start-line="5" selection-start-column="27" selection-end-line="5" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#749#750#0" expanded="true" />
+            <element signature="e#826#827#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1052,7 +1061,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="11" column="36" selection-start-line="11" selection-start-column="36" selection-end-line="11" selection-end-column="36" />
           <folding>
-            <element signature="imports" expanded="false" />
+            <element signature="e#378#379#0" expanded="true" />
+            <element signature="e#423#424#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1101,7 +1111,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="11" column="36" selection-start-line="11" selection-start-column="36" selection-end-line="11" selection-end-column="36" />
           <folding>
-            <element signature="imports" expanded="false" />
+            <element signature="e#378#379#0" expanded="true" />
+            <element signature="e#423#424#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1178,24 +1189,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/hazelcast/cloudfoundry/servicebroker/config/HazelcastServiceBrokerAPIVersionConfiguration.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/hazelcast/cloudfoundry/servicebroker/service/HazelcastAdmin.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="11" column="36" selection-start-line="11" selection-start-column="36" selection-end-line="11" selection-end-column="36" />
+          <caret line="22" column="10" selection-start-line="22" selection-start-column="10" selection-end-line="22" selection-end-column="10" />
           <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/hazelcast/cloudfoundry/servicebroker/exception/HazelcastServiceException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding>
-            <element signature="e#536#537#0" expanded="false" />
-            <marker date="1451398905000" expanded="false" signature="144:184" placeholder="/**...*/" />
-            <marker date="1451398905000" expanded="false" signature="310:321" placeholder=" { " />
+            <element signature="imports" expanded="true" />
+            <element signature="e#749#750#0" expanded="true" />
+            <element signature="e#826#827#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1220,12 +1221,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/hazelcast/cloudfoundry/servicebroker/service/HazelcastAdmin.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/hazelcast/cloudfoundry/servicebroker/service/HazelcastServiceInstanceService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="66" column="50" selection-start-line="66" selection-start-column="50" selection-end-line="66" selection-end-column="50" />
+          <caret line="91" column="0" selection-start-line="91" selection-start-column="0" selection-end-line="91" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#1553#1554#0" expanded="true" />
+            <element signature="e#1605#1606#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1233,7 +1236,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/org/hazelcast/cloudfoundry/servicebroker/repository/HazelcastServiceRepository.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
           <folding>
             <element signature="e#2138#2139#0" expanded="true" />
             <element signature="e#2195#2196#0" expanded="true" />
@@ -1241,15 +1244,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/hazelcast/cloudfoundry/servicebroker/service/HazelcastServiceInstanceService.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/hazelcast/cloudfoundry/servicebroker/exception/HazelcastServiceException.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.60796326">
-          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="11" column="5" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/hazelcast/cloudfoundry/servicebroker/config/HazelcastServiceBrokerAPIVersionConfiguration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="11" column="36" selection-start-line="11" selection-start-column="36" selection-end-line="11" selection-end-column="36" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1553#1554#0" expanded="true" />
-            <element signature="e#1605#1606#0" expanded="true" />
+            <element signature="e#378#379#0" expanded="true" />
+            <element signature="e#423#424#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/hazelcast/cloudfoundry/servicebroker/config/HazelcastCatalogConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.13782541">
+          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>

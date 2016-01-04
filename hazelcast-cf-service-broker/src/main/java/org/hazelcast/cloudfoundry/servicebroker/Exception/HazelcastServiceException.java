@@ -11,12 +11,4 @@ public class HazelcastServiceException extends ServiceBrokerException {
         super(message);
     }
 
-    public HazelcastServiceException(Throwable cause) {
-        super(cause);
-    }
-
-    public HazelcastServiceException(String message, Throwable cause) {
-        super(message, cause);
-    }
-
 }
