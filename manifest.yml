@@ -1,7 +1,11 @@
 ---
 applications:
 - name: hazelcast-service-broker
-  memory: 1024M
-  instances: 1
-  path: /Users/rahul/Hazelcast/cloudfoundry/hazelcast-cloudfoundry/hazelcast-cf-service-broker/build/libs/hazelcast-cf-service-broker.war
+  memory: 4096M
+  instances: 3 
+  path: /Users/rahul/Hazelcast/cloudfoundry/hazelcast-cloudfoundry/build/libs/hazelcast-cf-service-broker.war
+  buildpack: https://github.com/wildnez/java-buildpack.git
   stack: cflinuxfs2
+  env:
+    MANAGEMENT_CENTER_URL: hazelcast-mancenter.52.70.161.122.xip.io
+  

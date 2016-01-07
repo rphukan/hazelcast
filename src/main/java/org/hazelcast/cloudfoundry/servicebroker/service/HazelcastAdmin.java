@@ -64,6 +64,11 @@ public class HazelcastAdmin {
 
     private Config getHazelcastInstanceConfig(String serviceInstanceId) {
         Config config = new Config();
+        String managementCenterURL = System.getenv("MANAGEMENT_CENTER_URL");
+        if(managementCenterURL != null && !managementCenterURL.equals("")) {
+            config.getManagementCenterConfig().setEnabled(true)
+                    .setUrl(managementCenterURL).setUpdateInterval(3);
+        }
         config.setInstanceName(serviceInstanceId);
         NetworkConfig network = config.getNetworkConfig();
         JoinConfig join = network.getJoin();
