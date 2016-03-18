@@ -6,6 +6,4 @@ applications:
   path: /Users/rahul/Hazelcast/cloudfoundry/hazelcast-cloudfoundry/build/libs/hazelcast-cf-service-broker.war
   buildpack: https://github.com/wildnez/java-buildpack.git
   stack: cflinuxfs2
-  env:
-    MANAGEMENT_CENTER_URL: hazelcast-mancenter.52.70.161.122.xip.io
   
