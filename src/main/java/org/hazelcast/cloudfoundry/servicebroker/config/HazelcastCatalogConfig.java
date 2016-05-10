@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2008-2015, Hazelcast, Inc. All Rights Reserved.
+ * Copyright (c) 2008-2016, Hazelcast, Inc. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,12 +28,15 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * Catalog Configuration Bean
+ */
 @Configuration
 public class HazelcastCatalogConfig {
 
     @Bean
     public Catalog catalog() {
-        return new Catalog( Arrays.asList(
+        return new Catalog(Arrays.asList(
                 new ServiceDefinition(
                         "Hazelcast",
                         "Hazelcast",
@@ -53,27 +56,27 @@ public class HazelcastCatalogConfig {
 
 /* Used by Pivotal CF console */
 
-    private Map<String,Object> getServiceDefinitionMetadata() {
-        Map<String,Object> sdMetadata = new HashMap<String,Object>();
+    private Map<String, Object> getServiceDefinitionMetadata() {
+        Map<String, Object> sdMetadata = new HashMap<String, Object>();
         sdMetadata.put("displayName", "Hazelcast");
-        sdMetadata.put("longDescription","Hazelcast Service");
-        sdMetadata.put("providerDisplayName","Pivotal");
-        sdMetadata.put("documentationUrl","http://www.hazelcast.org");
-        sdMetadata.put("supportUrl","http://www.hazelcast.org");
+        sdMetadata.put("longDescription", "Hazelcast Service");
+        sdMetadata.put("providerDisplayName", "Pivotal");
+        sdMetadata.put("documentationUrl", "http://www.hazelcast.org");
+        sdMetadata.put("supportUrl", "http://www.hazelcast.org");
         return sdMetadata;
     }
 
-    private Map<String,Object> getPlanMetadata() {
-        Map<String,Object> planMetadata = new HashMap<String,Object>();
+    private Map<String, Object> getPlanMetadata() {
+        Map<String, Object> planMetadata = new HashMap<String, Object>();
         planMetadata.put("costs", getCosts());
         planMetadata.put("bullets", getBullets());
         return planMetadata;
     }
 
-    private List<Map<String,Object>> getCosts() {
-        Map<String,Object> costsMap = new HashMap<String,Object>();
+    private List<Map<String, Object>> getCosts() {
+        Map<String, Object> costsMap = new HashMap<String, Object>();
 
-        Map<String,Object> amount = new HashMap<String,Object>();
+        Map<String, Object> amount = new HashMap<String, Object>();
         amount.put("usd", new Double(0));
 
         costsMap.put("amount", amount);

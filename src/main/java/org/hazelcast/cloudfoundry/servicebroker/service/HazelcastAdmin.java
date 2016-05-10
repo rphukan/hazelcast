@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2008-2015, Hazelcast, Inc. All Rights Reserved.
+ * Copyright (c) 2008-2016, Hazelcast, Inc. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,6 +29,9 @@ import org.springframework.stereotype.Service;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * HazelcastAdmin class
+ */
 @Service
 public class HazelcastAdmin {
 
@@ -50,7 +53,7 @@ public class HazelcastAdmin {
     private String getClusterMembersConfig() {
         StringBuilder clusterMembersConfigBuilder = null;
 
-        if(repository.getAllServiceInstances().size() > 0) {
+        if (repository.getAllServiceInstances().size() > 0) {
             clusterMembersConfigBuilder = new StringBuilder();
             for (ServiceInstance serviceInstance : repository.getAllServiceInstances()) {
                 clusterMembersConfigBuilder.append(((HazelcastServiceInstance) serviceInstance).getHazelcastIPAddress());
@@ -65,7 +68,7 @@ public class HazelcastAdmin {
     private Config getHazelcastInstanceConfig(String serviceInstanceId) {
         Config config = new Config();
         String managementCenterURL = System.getenv("MANAGEMENT_CENTER_URL");
-        if(managementCenterURL != null && !managementCenterURL.equals("")) {
+        if (managementCenterURL != null && !managementCenterURL.equals("")) {
             config.getManagementCenterConfig().setEnabled(true)
                     .setUrl(managementCenterURL).setUpdateInterval(3);
         }
@@ -75,8 +78,9 @@ public class HazelcastAdmin {
         join.getMulticastConfig().setEnabled(false);
         join.getTcpIpConfig().setEnabled(true);
         String clusterMembers = getClusterMembersConfig();
-        if(clusterMembers != null)
+        if (clusterMembers != null) {
             join.getTcpIpConfig().addMember(clusterMembers);
+        }
         network.getInterfaces().setEnabled(true).addInterface("10.*.*.*");
 
         return config;

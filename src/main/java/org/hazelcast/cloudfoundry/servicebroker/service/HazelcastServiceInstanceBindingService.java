@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2008-2015, Hazelcast, Inc. All Rights Reserved.
+ * Copyright (c) 2008-2016, Hazelcast, Inc. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,6 +29,9 @@ import org.springframework.stereotype.Service;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * HazelcastServiceInstanceBindingService class
+ */
 @Service
 public class HazelcastServiceInstanceBindingService implements ServiceInstanceBindingService {
 
@@ -39,11 +42,12 @@ public class HazelcastServiceInstanceBindingService implements ServiceInstanceBi
     }
 
     @Override
-    public ServiceInstanceBinding createServiceInstanceBinding(CreateServiceInstanceBindingRequest createServiceInstanceBindingRequest) throws ServiceInstanceBindingExistsException, ServiceBrokerException {
+    public ServiceInstanceBinding createServiceInstanceBinding(CreateServiceInstanceBindingRequest
+                createServiceInstanceBindingRequest) throws ServiceInstanceBindingExistsException, ServiceBrokerException {
         String id = createServiceInstanceBindingRequest.getBindingId();
 
         ServiceInstanceBinding instanceBinding = repository.findServiceInstanceBinding(id);
-        if(instanceBinding != null) {
+        if (instanceBinding != null) {
             throw new ServiceInstanceBindingExistsException(instanceBinding);
         }
 
@@ -63,11 +67,12 @@ public class HazelcastServiceInstanceBindingService implements ServiceInstanceBi
     }
 
     @Override
-    public ServiceInstanceBinding deleteServiceInstanceBinding(DeleteServiceInstanceBindingRequest deleteServiceInstanceBindingRequest) throws ServiceBrokerException {
+    public ServiceInstanceBinding deleteServiceInstanceBinding(DeleteServiceInstanceBindingRequest
+           deleteServiceInstanceBindingRequest) throws ServiceBrokerException {
         String id = deleteServiceInstanceBindingRequest.getBindingId();
 
         ServiceInstanceBinding instanceBinding = repository.findServiceInstanceBinding(id);
-        if(instanceBinding != null) {
+        if (instanceBinding != null) {
             repository.deleteServiceInstanceBinding(instanceBinding);
         }
 

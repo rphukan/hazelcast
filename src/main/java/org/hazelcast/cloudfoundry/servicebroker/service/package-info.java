@@ -14,23 +14,9 @@
  * limitations under the License.
  */
 
-
-package org.hazelcast.cloudfoundry.servicebroker.config;
-
-import org.cloudfoundry.community.servicebroker.model.BrokerApiVersion;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-
 /**
- * API Version Configuration Bean
+ * Service package
  */
 
-@Configuration
-public class HazelcastServiceBrokerAPIVersionConfiguration {
+package org.hazelcast.cloudfoundry.servicebroker.service;
 
-    @Bean
-    public BrokerApiVersion brokerApiVersion() {
-        return new BrokerApiVersion();
-    }
-
-}

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2008-2015, Hazelcast, Inc. All Rights Reserved.
+ * Copyright (c) 2008-2016, Hazelcast, Inc. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 
-
 package org.hazelcast.cloudfoundry.servicebroker.repository;
 
 import org.cloudfoundry.community.servicebroker.model.ServiceInstance;
@@ -24,9 +23,12 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
-public class HazelcastServiceRepository {
+/**
+ * HazelcastServiceRepository class
+ */
+public final class HazelcastServiceRepository {
 
-    private static final HazelcastServiceRepository instance = new HazelcastServiceRepository();
+    private static final HazelcastServiceRepository INSTANCE = new HazelcastServiceRepository();
     private Map<String, ServiceInstance> serviceInstanceRepository;
     private Map<String, ServiceInstanceBinding> serviceInstanceBindingRepository;
 
@@ -36,7 +38,7 @@ public class HazelcastServiceRepository {
     }
 
     public static HazelcastServiceRepository getInstance() {
-        return instance;
+        return INSTANCE;
     }
 
     public ServiceInstance findServiceInstance(String id) {
@@ -64,8 +66,9 @@ public class HazelcastServiceRepository {
     }
 
     public void deleteServiceInstanceBinding(ServiceInstanceBinding serviceInstanceBinding) {
-        if(serviceInstanceBinding != null)
+        if (serviceInstanceBinding != null) {
             serviceInstanceBindingRepository.remove(serviceInstanceBinding.getId());
+        }
     }
 
     public Collection<ServiceInstance> getAllServiceInstances() {

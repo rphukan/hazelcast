@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2008-2015, Hazelcast, Inc. All Rights Reserved.
+ * Copyright (c) 2008-2016, Hazelcast, Inc. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,6 +34,9 @@ import org.springframework.stereotype.Service;
 
 import java.net.InetAddress;
 import java.net.UnknownHostException;
+/**
+ * HazelcastServiceInstanceService class
+ */
 
 @Service
 public class HazelcastServiceInstanceService implements ServiceInstanceService {
@@ -47,20 +50,22 @@ public class HazelcastServiceInstanceService implements ServiceInstanceService {
     }
 
     @Override
-    public ServiceInstance createServiceInstance(CreateServiceInstanceRequest createServiceInstanceRequest) throws ServiceInstanceExistsException, ServiceBrokerException {
-
+    public ServiceInstance createServiceInstance(CreateServiceInstanceRequest createServiceInstanceRequest)
+            throws ServiceInstanceExistsException, ServiceBrokerException {
         String instanceId = createServiceInstanceRequest.getServiceInstanceId();
 
         ServiceInstance serviceInstance = repository.findServiceInstance(instanceId);
-        if(serviceInstance != null) {
+        if (serviceInstance != null) {
             throw new ServiceInstanceExistsException(serviceInstance);
         }
 
         serviceInstance = new HazelcastServiceInstance(createServiceInstanceRequest);
 
-        HazelcastInstance hazelcastInstance = hazelcastAdmin.createHazelcastInstance(createServiceInstanceRequest.getServiceInstanceId());
-        if(hazelcastInstance == null) {
-            throw new HazelcastServiceException("Failed to create new Hazelcast member hazelcastInstance: "+createServiceInstanceRequest.getServiceInstanceId());
+        HazelcastInstance hazelcastInstance = hazelcastAdmin.createHazelcastInstance(
+                createServiceInstanceRequest.getServiceInstanceId());
+        if (hazelcastInstance == null) {
+            throw new HazelcastServiceException("Failed to create new Hazelcast member hazelcastInstance: "
+                    + createServiceInstanceRequest.getServiceInstanceId());
         }
 
         String hazelcastHost = hazelcastInstance.getCluster().getLocalMember().getAddress().getHost();
@@ -85,9 +90,11 @@ public class HazelcastServiceInstanceService implements ServiceInstanceService {
     }
 
     @Override
-    public ServiceInstance deleteServiceInstance(DeleteServiceInstanceRequest deleteServiceInstanceRequest) throws ServiceBrokerException {
-        ServiceInstance serviceInstance = repository.findServiceInstance(deleteServiceInstanceRequest.getServiceInstanceId());
-        if(serviceInstance != null) {
+    public ServiceInstance deleteServiceInstance(DeleteServiceInstanceRequest deleteServiceInstanceRequest)
+            throws ServiceBrokerException {
+        ServiceInstance serviceInstance = repository.findServiceInstance(
+                deleteServiceInstanceRequest.getServiceInstanceId());
+        if (serviceInstance != null) {
             repository.deleteServiceInstance(serviceInstance);
             hazelcastAdmin.deleteHazelcastInstance(deleteServiceInstanceRequest.getServiceInstanceId());
         }
@@ -95,9 +102,10 @@ public class HazelcastServiceInstanceService implements ServiceInstanceService {
     }
 
     @Override
-    public ServiceInstance updateServiceInstance(UpdateServiceInstanceRequest updateServiceInstanceRequest) throws ServiceInstanceUpdateNotSupportedException, ServiceBrokerException, ServiceInstanceDoesNotExistException {
+    public ServiceInstance updateServiceInstance(UpdateServiceInstanceRequest updateServiceInstanceRequest)
+            throws ServiceInstanceUpdateNotSupportedException, ServiceBrokerException, ServiceInstanceDoesNotExistException {
         ServiceInstance serviceInstance = repository.findServiceInstance(updateServiceInstanceRequest.getServiceInstanceId());
-        if(serviceInstance == null) {
+        if (serviceInstance == null) {
             throw new ServiceInstanceDoesNotExistException(updateServiceInstanceRequest.getServiceInstanceId());
         }
         repository.deleteServiceInstance(serviceInstance);
