@@ -35,8 +35,8 @@ public class HazelcastCatalogConfig {
     public Catalog catalog() {
         List list = new ArrayList();
         list.add(new ServiceDefinition(
-                        "Hazelcast",
-                        "Hazelcast",
+                        "Hazelcast123",
+                        "Hazelcast-name",
                         "A simple Hazelcast implementation",
                         true,
                         false,
@@ -44,17 +44,17 @@ public class HazelcastCatalogConfig {
                                 new Plan("hazelcast-plan",
                                         "default",
                                         "This is a default Hazelcast plan.  All services are created equally.",
-                                        getPlanMetadata())),
-                        Arrays.asList("hazelcast", "document"),
+                                        getPlanMetadata(), true)),
+                        Arrays.asList("hazelcast456", "document"),
                         getServiceDefinitionMetadata(),
                         null,
                         null));
 
         Map<String, Object> planMetadata = new HashMap<String, Object>();
         planMetadata.put("plan-metadata", "plan-metadata-description");
-        List<Plan> plans = Collections.singletonList(new Plan("hazelcast-free-plan", "hazelcast-free-plan", "'Free Hazelcast plan!'",
+        List<Plan> plans = Collections.singletonList(new Plan("hazelcast-free-123", "hazelcast-free-plan", "'Free Hazelcast plan!'",
                 planMetadata, true));
-        list.add(new ServiceDefinition("hazelcast-free", "hazelcast-free", "Free Hazelcast ", true, true, plans,
+        list.add(new ServiceDefinition("hazelcast-free-id", "hazelcast-free-name", "Free Hazelcast ", true, true, plans,
                 Collections.singletonList("hazelcast"), null, null, null));
         return new Catalog(list);
     }
