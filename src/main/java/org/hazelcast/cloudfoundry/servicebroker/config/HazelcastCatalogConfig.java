@@ -23,10 +23,7 @@ import org.cloudfoundry.community.servicebroker.model.ServiceDefinition;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Catalog Configuration Bean
@@ -36,8 +33,8 @@ public class HazelcastCatalogConfig {
 
     @Bean
     public Catalog catalog() {
-        return new Catalog(Arrays.asList(
-                new ServiceDefinition(
+        List list = new ArrayList();
+        list.add(new ServiceDefinition(
                         "Hazelcast",
                         "Hazelcast",
                         "A simple Hazelcast implementation",
@@ -51,8 +48,17 @@ public class HazelcastCatalogConfig {
                         Arrays.asList("hazelcast", "document"),
                         getServiceDefinitionMetadata(),
                         null,
-                        null)));
+                        null));
+
+        Map<String, Object> planMetadata = new HashMap<String, Object>();
+        planMetadata.put("plan-metadata", "plan-metadata-description");
+        List<Plan> plans = Collections.singletonList(new Plan("hazelcast-free-plan", "hazelcast-free-plan", "'Free Hazelcast plan!'",
+                planMetadata, true));
+        list.add(new ServiceDefinition("hazelcast-free", "hazelcast-free", "Free Hazelcast ", true, true, plans,
+                Collections.singletonList("hazelcast"), null, null, null));
+        return new Catalog(list);
     }
+
 
 /* Used by Pivotal CF console */
 
