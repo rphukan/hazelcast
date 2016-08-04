@@ -38,6 +38,8 @@ public class HazelcastAdmin {
     private static HazelcastServiceRepository repository = HazelcastServiceRepository.getInstance();
     private Map<String, HazelcastInstance> hazelcastInstances;
 
+    private static String MANAGEMENT_CENTER_IDENTIFIER = "MANAGEMENT_CENTER_URL";
+    private static String LICENSE_KEY_IDENTIFIER = "LICENSE_KEY";
 
     public HazelcastAdmin() {
         hazelcastInstances = new HashMap<String, HazelcastInstance>();
@@ -67,8 +69,12 @@ public class HazelcastAdmin {
 
     private Config getHazelcastInstanceConfig(String serviceInstanceId) {
         Config config = new Config();
-        String managementCenterURL = System.getenv("MANAGEMENT_CENTER_URL");
-        if (managementCenterURL != null && !managementCenterURL.equals("")) {
+        String LICENSE_KEY = System.getenv(LICENSE_KEY_IDENTIFIER);
+        if(LICENSE_KEY != null && !LICENSE_KEY.isEmpty())
+            config.setLicenseKey(LICENSE_KEY);
+
+        String managementCenterURL = System.getenv(MANAGEMENT_CENTER_IDENTIFIER);
+        if (managementCenterURL != null && !managementCenterURL.isEmpty()) {
             config.getManagementCenterConfig().setEnabled(true)
                     .setUrl(managementCenterURL).setUpdateInterval(3);
         }
