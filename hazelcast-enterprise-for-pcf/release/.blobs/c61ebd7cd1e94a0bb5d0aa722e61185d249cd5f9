@@ -1,0 +1,4 @@
+---
+buildpack: https://github.com/hazelcast/java-buildpack.git
+memory: 2048m
+path: hazelcast-cf-service-broker.war

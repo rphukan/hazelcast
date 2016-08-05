@@ -4,7 +4,7 @@ templates:
   delete-all.sh.erb: bin/run
 packages:
 - cf_cli
-- hazelcast_enterprise_service_broker_app
+- hazelcast_enterprise_service_broker
 properties:
   domain:
     description: 'CloudFoundry system domain'

@@ -4,7 +4,7 @@ templates:
   deploy-all.sh.erb: bin/run
 packages:
 - cf_cli
-- hazelcast_enterprise_service_broker_app
+- hazelcast_enterprise_service_broker
 properties:
   domain:
     description: 'CloudFoundry system domain'
@@ -39,12 +39,12 @@ properties:
     description: Management Center URL
   license_key:
     description: License Key for Hazelcast Enterprise
-  hazelcast_enterprise_service_broker_app.name:
+  hazelcast_enterprise_service_broker.name:
     description: 'Name of package'
-  hazelcast_enterprise_service_broker_app.user:
+  hazelcast_enterprise_service_broker.user:
      description: 'Basic auth username'
-  hazelcast_enterprise_service_broker_app.password:
+  hazelcast_enterprise_service_broker.password:
      description: 'Basic auth password'
-  hazelcast_enterprise_service_broker_app.enable_global_access_to_plans:
+  hazelcast_enterprise_service_broker.enable_global_access_to_plans:
     description: 'Access to all service plans'
     default: false

@@ -286,27 +286,27 @@ add_target_org_to_admin
 setup_package_path
 apply_open_security_group "$APPLY_OPEN_SECURITY_GROUP"
 
-# Deploy package hazelcast_service_broker_app
+# Deploy package hazelcast_service_broker
 #
 
-export PKG_NAME=hazelcast_service_broker_app
-export APP_NAME=hazelcast-service-broker-app-1.0.1
-export APP_HOST=hazelcast-service-broker-app
+export PKG_NAME=hazelcast_service_broker
+export APP_NAME=hazelcast-service-broker-1.0.2
+export APP_HOST=hazelcast-service-broker
 export DOCKER_IMAGE=""
 export NEEDS_CF_CREDS=""
 export HEALTH_CHECK=""
 deploy_app "$PKG_NAME" "$APP_NAME" "$APP_HOST" "$DOCKER_IMAGE" "$NEEDS_CF_CREDS" "$HEALTH_CHECK"
-export SVC_NAME="<%= properties.hazelcast_service_broker_app.persistence_store_type %>"
+export SVC_NAME="<%= properties.hazelcast_service_broker.persistence_store_type %>"
 export SVC_PLAN=""
 provision_auto_service "$PKG_NAME" "$APP_NAME" "$SVC_NAME" "$SVC_PLAN"
-start_app hazelcast-service-broker-app "$APP_NAME"
+start_app hazelcast-service-broker "$APP_NAME"
 
-export BROKER_NAME=hazelcast-service-broker-app
-export BROKER_USER=<%= properties.hazelcast_service_broker_app.user %>
-export BROKER_PASS=<%= properties.hazelcast_service_broker_app.password %>
+export BROKER_NAME=hazelcast-service-broker
+export BROKER_USER=<%= properties.hazelcast_service_broker.user %>
+export BROKER_PASS=<%= properties.hazelcast_service_broker.password %>
 export BROKER_SERVICES=""
 export BROKER_URL=$SCHEME://${APP_HOST}.${APP_DOMAIN}
-export GLOBAL_ACCESS=<%= properties.hazelcast_service_broker_app.enable_global_access_to_plans %>
+export GLOBAL_ACCESS=<%= properties.hazelcast_service_broker.enable_global_access_to_plans %>
 register_broker "$BROKER_NAME" "$BROKER_USER" "$BROKER_PASS" "$BROKER_URL" "$GLOBAL_ACCESS" "$BROKER_SERVICES"
 
 

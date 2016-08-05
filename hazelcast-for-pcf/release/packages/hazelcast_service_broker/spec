@@ -1,0 +1,8 @@
+---
+name: hazelcast_service_broker
+
+dependencies: []
+
+files:
+- hazelcast_service_broker/hazelcast-cf-service-broker.war
+- hazelcast_service_broker/manifest.yml

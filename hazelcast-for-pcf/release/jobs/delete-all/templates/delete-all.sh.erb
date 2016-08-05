@@ -98,10 +98,10 @@ authenticate
 if target_org; then
 	if target_space; then
 
-		# Delete package hazelcast_service_broker_app
+		# Delete package hazelcast_service_broker
 		#
-		delete_service_broker hazelcast-service-broker-app
-		delete_all_versions hazelcast-service-broker-app
+		delete_service_broker hazelcast-service-broker
+		delete_all_versions hazelcast-service-broker
 
 		delete_empty_space
 	fi
