@@ -40,4 +40,5 @@ Create service instances using the service plan you have created above. Run the 
 `cf create-service <service-plan-name> <service-plan-type> <service-name>`
 
 Verify the state of Hazelcast member node by checking Hazelcast logs that are dumped in the application log i.e. 
+
 `cf logs hazelcast-service-broker --recent`
