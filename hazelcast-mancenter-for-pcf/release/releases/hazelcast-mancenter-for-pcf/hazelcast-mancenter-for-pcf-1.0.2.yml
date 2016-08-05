@@ -3,28 +3,28 @@ packages:
 - name: cf_cli
   version: 54f5ee71e4f829d2f009461b79a9930c70f33bb5
   fingerprint: 54f5ee71e4f829d2f009461b79a9930c70f33bb5
-  sha1: ad45b47d22296463e406447069ba4486d0165f69
+  sha1: cabfa7632f6d7a5f56427b58c89523529e808b6e
   dependencies: []
 - name: common
   version: d83e9d13dc21a50d19a829232582496637f02eca
   fingerprint: d83e9d13dc21a50d19a829232582496637f02eca
-  sha1: 955924265b1c9a47de6653d006e5e8757a40af12
+  sha1: 2bba7d5b0511637cefc61caa762fc209dedb2d25
   dependencies: []
 - name: hazelcast_mancenter
   version: 02b4bad47c4de8a4d63fcd77ab5b4c63d52728db
   fingerprint: 02b4bad47c4de8a4d63fcd77ab5b4c63d52728db
-  sha1: 1c0b2a91c0370a73608f80b5907428f67141ecfb
+  sha1: c8644bd32f5af94d768876b5f30a15b7b81fb823
   dependencies: []
 jobs:
 - name: delete-all
   version: 4245b2976b288dacf4f9abeb1f48cba88b0530b4
   fingerprint: 4245b2976b288dacf4f9abeb1f48cba88b0530b4
-  sha1: 3ef33e090d0a9f773738dfbecae8574d3c8b12cf
+  sha1: bd6c3c3a52c98c5e25beb354971af33a071896c9
 - name: deploy-all
-  version: 1aabbf167a2b11edee8abffd21b9adaa744b106b
-  fingerprint: 1aabbf167a2b11edee8abffd21b9adaa744b106b
-  sha1: 76680b7baa2f60940f71a6dc70d0a63e26db4b51
-commit_hash: '00000000'
-uncommitted_changes: false
+  version: 225ec9d698a8e4c163140abe8cc358558461f19d
+  fingerprint: 225ec9d698a8e4c163140abe8cc358558461f19d
+  sha1: 8748b706183adbc0c02ee7ece8a99efb9efb75e8
+commit_hash: 1287a98b
+uncommitted_changes: true
 name: hazelcast-mancenter-for-pcf
-version: 1.0.1
+version: 1.0.2
