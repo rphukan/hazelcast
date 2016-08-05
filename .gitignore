@@ -16,3 +16,4 @@ build/
 **/releases/**/*.tgz
 **/product/**/*.pivotal
 **/blobs/**/*.war
+**/resources/hazelcast-cf-service-broker.war
