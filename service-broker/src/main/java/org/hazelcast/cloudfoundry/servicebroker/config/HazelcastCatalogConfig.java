@@ -86,8 +86,9 @@ public class HazelcastCatalogConfig {
     }
 
     private List<String> getBullets() {
-        return Arrays.asList("Shared Hazelcast cluster",
-                "100 MB Storage (not enforced)",
-                "40 concurrent connections (not enforced)");
+        return Arrays.asList("Default Service Plan",
+                "Unlimited cluster instances",
+                "Unlimited memory usage",
+                "Unlimited client connections");
     }
 }
