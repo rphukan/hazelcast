@@ -1,0 +1,6 @@
+---
+env:
+  JBP_CONFIG_SPRING_AUTO_RECONFIGURATION: '{enabled: false}'
+instances: 1
+memory: 2048m
+path: mancenter-3.6.4.war

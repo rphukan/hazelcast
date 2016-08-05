@@ -1,0 +1,5 @@
+# abort script on any command that exit with a non zero value
+set -e
+
+cp hazelcast_mancenter/mancenter-3.6.4.war ${BOSH_INSTALL_TARGET}
+cp hazelcast_mancenter/manifest.yml ${BOSH_INSTALL_TARGET}
