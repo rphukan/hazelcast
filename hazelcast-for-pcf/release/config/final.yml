@@ -1,0 +1,6 @@
+---
+blobstore:
+  provider: local
+  options:
+    blobstore_path: /tmp/hazelcast-for-pcf-blobs
+final_name: hazelcast-for-pcf

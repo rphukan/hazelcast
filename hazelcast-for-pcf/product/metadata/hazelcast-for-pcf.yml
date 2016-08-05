@@ -1,0 +1,256 @@
+---
+name: hazelcast-for-pcf
+label: Hazelcast for PCF
+description: Hazelcast for PCF
+icon_image: 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
+product_version: '1.0.1'
+metadata_version: '1.5'
+minimum_version_for_upgrade: '0.0.1'
+rank: 1
+serial: true
+
+releases:
+- file: hazelcast-for-pcf-1.0.1.tgz
+  name: hazelcast-for-pcf
+  version: '1.0.1'
+
+stemcell_criteria:
+  os: ubuntu-trusty
+  requires_cpi: false
+  version: '3146.5'
+
+property_blueprints:
+#
+# Parameters for the entire product
+#
+- name: org
+  type: string
+  configurable: true
+  default: hazelcast-org
+- name: org_quota
+  type: integer
+  configurable: true
+  constraints:
+    min: 512
+    max: 4096
+  default: 4096
+- name: space
+  type: string
+  configurable: true
+  default: hazelcast-space
+- name: apply_open_security_group
+  type: boolean
+  configurable: true
+  default: False
+- name: allow_paid_service_plans
+  type: boolean
+  configurable: true
+  default: False
+#
+# Standard properties for package hazelcast_service_broker_app
+#
+- name: hazelcast_service_broker_app_enable_global_access_to_plans
+  type: boolean
+  configurable: true
+  default: True
+#
+# Custom properties from the tile.yml file
+#
+- name: management_center_url # Refer to this elsewhere as (( .properties.management_center_url ))
+  type: string
+  default: http://hazelcast-mancenter.apps.bigfastexperts.com/mancenter
+  configurable: true
+  optional: false
+
+form_types:
+#
+# Custom form mancenter_properties from the tile.yml file
+#
+- name: mancenter_properties
+  label: Management Center Props
+  description: mancenter_properties
+  property_inputs:
+  - reference: .properties.management_center_url
+    label: Management Center URL
+    description: Management Center URL
+#
+# Service access form
+#
+- name: service_access
+  label: Service Access
+  description: Determine availability of services
+  property_inputs:
+  - reference: .properties.hazelcast_service_broker_app_enable_global_access_to_plans
+    label: Enable global access to plans of service hazelcast_service_broker_app
+    description: "Enable global access to plans in the marketplace"
+
+job_types:
+#
+# Default compilation job
+#
+- name: compilation
+  resource_label: compilation
+  resource_definitions:
+   - name: ram
+     type: integer
+     configurable: true
+     default: 4096
+   - name: ephemeral_disk
+     type: integer
+     configurable: true
+     default: 10240
+   - name: persistent_disk
+     type: integer
+     configurable: true
+     default: 0
+   - name: cpu
+     type: integer
+     configurable: true
+     default: 2
+  static_ip: 0
+  dynamic_ip: 1
+  max_in_flight: 1
+  single_az_only: true
+  instance_definitions:
+  - name: instances
+    type: integer
+    configurable: true
+    default: 1
+#
+# deploy-all job
+#
+- name: deploy-all
+  resource_label: deploy-all
+  errand: true
+  templates:
+  - name: deploy-all
+    release: hazelcast-for-pcf
+  resource_definitions:
+  - name: ram
+    type: integer
+    configurable: false
+    default: 1024
+  - name: ephemeral_disk
+    type: integer
+    configurable: false
+    default: 4096
+  - name: persistent_disk
+    type: integer
+    configurable: false
+    default: 0
+  - name: cpu
+    type: integer
+    configurable: false
+    default: 1
+  static_ip: 0
+  dynamic_ip: 1
+  max_in_flight: 1
+  single_az_only: false
+  instance_definitions:
+  - name: instances
+    type: integer
+    configurable: false
+    default: 1
+  property_blueprints:
+  - name: vm_credentials
+    type: salted_credentials
+    default:
+      identity: vcap
+  - name: app_credentials
+    type: salted_credentials
+  manifest: |
+    domain: (( ..cf.cloud_controller.system_domain.value ))
+    app_domains:
+    - (( ..cf.cloud_controller.apps_domain.value ))
+    org: (( .properties.org.value ))
+    space: (( .properties.space.value ))
+    ssl:
+      skip_cert_verify: (( ..cf.ha_proxy.skip_cert_verify.value ))
+    cf:
+      admin_user: (( ..cf.uaa.system_services_credentials.identity ))
+      admin_password: (( ..cf.uaa.system_services_credentials.password ))
+    org_quota: (( .properties.org_quota.value ))
+    apply_open_security_group: (( .properties.apply_open_security_group.value ))
+    allow_paid_service_plans: (( .properties.allow_paid_service_plans.value ))
+    security:
+      user: (( .deploy-all.app_credentials.identity ))
+      password: (( .deploy-all.app_credentials.password ))
+    management_center_url: (( .properties.management_center_url.value ))
+    hazelcast_service_broker_app:
+      name: hazelcast_service_broker_app
+      user: (( .deploy-all.app_credentials.identity ))
+      password: (( .deploy-all.app_credentials.password ))
+      enable_global_access_to_plans: (( .properties.hazelcast_service_broker_app_enable_global_access_to_plans.value ))
+#
+# delete-all job
+#
+- name: delete-all
+  resource_label: delete-all
+  errand: true
+  templates:
+  - name: delete-all
+    release: hazelcast-for-pcf
+  resource_definitions:
+  - name: ram
+    type: integer
+    configurable: false
+    default: 1024
+  - name: ephemeral_disk
+    type: integer
+    configurable: false
+    default: 4096
+  - name: persistent_disk
+    type: integer
+    configurable: false
+    default: 0
+  - name: cpu
+    type: integer
+    configurable: false
+    default: 1
+  static_ip: 0
+  dynamic_ip: 1
+  max_in_flight: 1
+  single_az_only: false
+  instance_definitions:
+  - name: instances
+    type: integer
+    configurable: false
+    default: 1
+  property_blueprints:
+  - name: vm_credentials
+    type: salted_credentials
+    default:
+      identity: vcap
+  - name: app_credentials
+    type: salted_credentials
+  manifest: |
+    domain: (( ..cf.cloud_controller.system_domain.value ))
+    app_domains:
+    - (( ..cf.cloud_controller.apps_domain.value ))
+    org: (( .properties.org.value ))
+    space: (( .properties.space.value ))
+    ssl:
+      skip_cert_verify: (( ..cf.ha_proxy.skip_cert_verify.value ))
+    cf:
+      admin_user: (( ..cf.uaa.system_services_credentials.identity ))
+      admin_password: (( ..cf.uaa.system_services_credentials.password ))
+
+post_deploy_errands:
+- name: deploy-all
+
+pre_delete_errands:
+- name: delete-all
+
+update:
+  canaries: 1
+  canary_watch_time: 10000-100000
+  max_in_flight: 1
+  update_watch_time: 10000-100000
+
+requires_product_versions:
+- name: cf
+  version: '~> 1.5'
+
+provides_product_versions:
+- name: hazelcast-for-pcf
+  version: '1.0.1'

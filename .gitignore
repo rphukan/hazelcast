@@ -13,3 +13,6 @@ reports/
 .gradle/
 .directory
 build/
+**/releases/**/*.tgz
+**/product/**/*.pivotal
+**/blobs/**/*.war

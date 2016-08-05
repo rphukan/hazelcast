@@ -1,0 +1,17 @@
+---
+cf_cli/all_open.json:
+  object_id: 102c1699-49b3-4253-8ba1-3ef913d26e92
+  sha: 5915785ed61178f2a4988de73517c1ef986146de
+  size: 80
+cf_cli/cf-linux-amd64.tgz:
+  object_id: 14778cd5-a32f-417f-9138-29b78abf77f0
+  sha: 2797ad41eabfec00cadd55164a5dec5d48024f9b
+  size: 6542009
+hazelcast_mancenter/mancenter-3.6.4.war:
+  object_id: 79f15a13-9468-49bb-9478-a26abe3623e4
+  sha: 28acf82174a5bdc15624ebea679b7a596ab92bca
+  size: 27643498
+hazelcast_mancenter/manifest.yml:
+  object_id: 43b2adcd-0f4a-4fe8-9bab-e1f907ea546c
+  sha: c77879c7b6e0cd014cf5b690099d444e33c5c013
+  size: 123

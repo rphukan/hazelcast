@@ -1,0 +1,17 @@
+---
+cf_cli/all_open.json:
+  object_id: 72dfddf0-e9d4-44aa-a696-b6c6e2b3b245
+  sha: 5915785ed61178f2a4988de73517c1ef986146de
+  size: 80
+cf_cli/cf-linux-amd64.tgz:
+  object_id: c176c177-9763-4cd9-b3dd-bfddd692a76e
+  sha: 2797ad41eabfec00cadd55164a5dec5d48024f9b
+  size: 6542009
+hazelcast_service_broker_app/hazelcast-cf-service-broker.war:
+  object_id: f6f9c3da-77fa-4ce0-ba67-78275edc9403
+  sha: 68ada9f9debae7edd14db3738bbaeb2669aa81cb
+  size: 42217267
+hazelcast_service_broker_app/manifest.yml:
+  object_id: c3561262-8329-48cf-8e27-6d56a1cb4c55
+  sha: 017257bf454f2c9e39ee3391bb14034da74f4713
+  size: 113

@@ -1,0 +1,8 @@
+---
+name: hazelcast_mancenter
+
+dependencies: []
+
+files:
+- hazelcast_mancenter/mancenter-3.6.4.war
+- hazelcast_mancenter/manifest.yml

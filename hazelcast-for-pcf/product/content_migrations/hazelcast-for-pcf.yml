@@ -1,0 +1,15 @@
+---
+product: hazelcast-for-pcf
+installation_version: '1.5'
+to_version: 1.0.1
+migrations:
+- from_version: 1.0.0
+  rules:
+  - type: update
+    selector: product_version
+    to: 1.0.1
+- from_version: 1.0.0
+  rules:
+  - type: update
+    selector: product_version
+    to: 1.0.1
