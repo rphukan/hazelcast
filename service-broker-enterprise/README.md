@@ -1,15 +1,19 @@
 hazelcast-cloudfoundry
 =============================
 
-Hazelcast CloudFoundry project for creating Cloud Foundry service broker and services. 
+Hazelcast CloudFoundry project for creating Cloud Foundry service broker and services on Hazelcast Enterprise.
 
 ## Overview
-The goal is to provide a service broker that creates Hazelcast Enterprise server instances in the form of CF service i.e. every successful completion of `cf create-service` command results in one Hazelcast server node. This implementation creates a default service plan that provides unlimited number of cluster instances with memory limits defined by the CF deployment only. 
+The goal is to provide a service broker that creates Hazelcast {enterprise edition} server instances in the form of CF service i.e. every successful completion of `cf create-service` command results in one Hazelcast server node. 
+
+**NOTE**: This broker requires a Hazelcast Enterprise or Enterprise HD license key to be able to successfully create service instances. Go to [Hazelcast website](https://hazelcast.com/) to obtain a license.
+
+This implementation creates a default service plan that allows creating licensed number of cluster instances  with memory limits defined by the CF deployment only. 
 
 ## Getting Started
 Download the latest Hazelcast service broker app from here : https://github.com/hazelcast/hazelcast-cloudfoundry/releases
 
-Here is a sample manifest yml file for deployment : 
+In the `manifest.yml`, you need to define an environement variable `LICENSE_KEY` to configure Hazelcast license key. Here is a sample manifest yml: 
 
 ```
 applications:
@@ -19,6 +23,8 @@ applications:
   path: <path to your hazelcast-cf-service-broker.war>
   buildpack: https://github.com/hazelcast/java-buildpack.git
   stack: cflinuxfs2
+  env:
+   LICENSE_KEY: <YOUR-HAZELCAST-LICENSE-KEY>
 ```
 Just a simple `cf push` will deploy service broker app to cloudfoundry with your mainfest file. A successful push would show the service broker running as one of the CF apps and will also provide a url where the app is hosted, save this url somewhere.
 
