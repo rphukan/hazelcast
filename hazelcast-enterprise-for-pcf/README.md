@@ -14,6 +14,8 @@ Clone the repo and either build the tile with [tile-generator](https://github.co
 ## Installation
 Upload the **.pivotal** file in your Ops Manager, set the availability zones (if the underlying infrastructure is AWS), enter the valid Management Center URL (as documented in **hazelcast-mancenter-for-pcf**), enter the valid license key and proceed with the installation. A successful installation will create a service broker and enable service-access to view all service plans in CF Marketplace.
 
+![screen shot 2016-08-09 at 4 39 04 pm](https://cloud.githubusercontent.com/assets/7980465/17523207/6d733810-5e77-11e6-9bdf-e6c2b7f5db39.png)
+
 ## Using Service Broker
 New services can be created using [Pivotal Apps Manager](https://docs.pivotal.io/pivotalcf/1-7/console/dev-console.html) or through CF CLI that is targetted at the Ops Manager Director.
 
