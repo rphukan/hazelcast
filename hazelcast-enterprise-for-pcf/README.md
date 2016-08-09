@@ -19,6 +19,11 @@ Upload the **.pivotal** file in your Ops Manager, set the availability zones (if
 ## Using Service Broker
 New services can be created using [Pivotal Apps Manager](https://docs.pivotal.io/pivotalcf/1-7/console/dev-console.html) or through CF CLI that is targetted at the Ops Manager Director.
 
+![screen shot 2016-08-09 at 4 37 44 pm](https://cloud.githubusercontent.com/assets/7980465/17523426/2a450112-5e78-11e6-9def-36c38a8a9174.png)
+
+Create Services from Apps Manager:
+![screen shot 2016-08-09 at 4 36 06 pm](https://cloud.githubusercontent.com/assets/7980465/17523464/49169c4a-5e78-11e6-99e8-13ce25a9957e.png)
+
 You can validate the formation of Hazelcast cluster either by checking service broker logs:
 `cf logs <HAZELCAST-SERVICE-BROKER-APP-NAME> --recent`
 
