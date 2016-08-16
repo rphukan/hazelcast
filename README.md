@@ -23,4 +23,4 @@ https://github.com/cloudfoundry-community/hazelcast/tree/master/hazelcast-enterp
 
 ![hazelcast-pcf-tiles](https://cloud.githubusercontent.com/assets/7980465/17696525/8e2c50fa-63cc-11e6-956d-7bc7c29d1b9b.png)
 
-**NOTE**: Check each sub-repository for their respective documentation.
+**NOTE**: Check each sub-repository for its respective documentation.
