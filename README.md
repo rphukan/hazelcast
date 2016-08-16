@@ -16,6 +16,10 @@ https://github.com/cloudfoundry-community/hazelcast/tree/master/service-broker/
 
 ## Hazelcast as PCF Tile 
 PCF tile to install Hazelcast Service Broker that creates Hazelcast server instances in the form of CF service. Tiles are clickable and easiest way to deploy a open source Hazelcast cluster on Cloud Foundry.
+See link for more details: 
+https://github.com/cloudfoundry-community/hazelcast/tree/master/hazelcast-for-pcf
+
+https://github.com/cloudfoundry-community/hazelcast/tree/master/hazelcast-enterprise-for-pcf
 
 ![hazelcast-pcf-tiles](https://cloud.githubusercontent.com/assets/7980465/17696525/8e2c50fa-63cc-11e6-956d-7bc7c29d1b9b.png)
 
